@@ -12,6 +12,9 @@ server.use(cors());
 
 server.use('/api/auth', authRouter);
 
-
+//test route
+server.get('/', (req, res) => {
+    res.send("It's alive!");
+  });
 
 module.exports = server; 
