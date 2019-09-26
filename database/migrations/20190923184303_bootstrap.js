@@ -10,13 +10,13 @@ exports.up = function(knex) {
     })
     .createTable('departments', tbl => {
       tbl.increments();
-      tbl.string('department')
+      tbl.string('department', 25)
     })
     .createTable('employees', tbl => {
       tbl.increments();
       tbl.string('name')
         .notNullable();
-      tbl.string('job_title')
+      tbl.string('job_title', 25)
         .notNullable();
       tbl.integer('department_id')
         .unsigned()
