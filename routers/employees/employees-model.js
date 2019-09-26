@@ -17,8 +17,8 @@ function findById() {
     
 }
 
-function add() {
-    
+function add(employee) {
+    return db('employees').insert(employee)
 }
 
 function update() {

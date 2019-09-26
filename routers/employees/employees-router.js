@@ -18,6 +18,20 @@ router.get('/', (req, res) => {
 })
 
 
+// Add employee
+
+router.post('/', async (req, res) => {
+    const employeeData = req.body;
+
+    try{
+        const [id] = await employeeModel.add(employeeData)
+        res.status(201).json({ created: id })
+    } catch (err){
+        res.status(500).json({message: 'Failed to create new employee.'})
+    }
+})
+
+
 
 
 
