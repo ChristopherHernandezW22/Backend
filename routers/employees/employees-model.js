@@ -1,4 +1,4 @@
-
+const db = require('../../database/db-config.js')
 
 module.exports = {
     find,
@@ -10,7 +10,7 @@ module.exports = {
 
 
 function find() {
-
+    return db('employees');
 }
 
 function findById() {
