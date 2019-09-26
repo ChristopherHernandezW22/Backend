@@ -18,7 +18,7 @@ function findById() {
 }
 
 function add(employee) {
-    return db('employees').insert(employee)
+    return db('employees').insert(employee, 'id')
 }
 
 function update() {
