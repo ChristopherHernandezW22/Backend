@@ -18,9 +18,14 @@ function findBy(filter) {
 async function add(user) {
   const [id] = await db('login').insert(user).returning('id')
 
+  try {if (id) {
   const newUser = await findById(id);
-  return newUser
+  return newUser }
+} catch(error) {
+  console.log(error)
 }
+}
+
 
 function findById(id) {
   return db('login')
